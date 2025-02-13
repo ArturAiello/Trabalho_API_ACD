@@ -1,6 +1,6 @@
 # Trabalho API
 
-construída com FastAPI para busca e análise de informações relativas a acidentes, utilizando dados do dataset do Kaggle (simulado) e a API Groq para processamento de linguagem. A API conta com medidas de segurança aprimoradas, como autenticação (token simples e JWT), rate limiting, cabeçalhos de segurança e configuração de CORS.  
+Esta é uma API construída com FastAPI para busca e análise de informações relativas a acidentes, utilizando dados do dataset do Kaggle (simulado) e a API Groq para processamento de linguagem. A API conta com medidas de segurança aprimoradas, como autenticação (token simples e JWT), rate limiting, cabeçalhos de segurança e configuração de CORS.  
 
 ---
 
@@ -100,8 +100,9 @@ Para iniciar o servidor de desenvolvimento, execute:
 
    ```bash
    uvicorn main:app --reload
+```
    
-- A API estará disponível em: http://127.0.0.1:8000
+A API estará disponível em: http://127.0.0.1:8000
 
 ## Endpoints
 1. **Busca Grau de Ferimento**
@@ -109,9 +110,11 @@ Para iniciar o servidor de desenvolvimento, execute:
 - Método: POST
 - Payload (JSON):
 
+```bash
 {
   "pergunta": "Qual é a incidência de ferimentos graves em acidentes de trabalho?"
 }
+```
 
 Descrição: Retorna uma análise com base na frequência dos graus de ferimento presentes no dataset.
 
@@ -120,9 +123,11 @@ Descrição: Retorna uma análise com base na frequência dos graus de ferimento
 - Método: POST
 - Payload (JSON):
 
+```bash
 {
   "pergunta": "Quais partes do corpo são mais afetadas em acidentes de trânsito?"
 }
+```
 
 Descrição: Retorna uma análise com base na frequência das partes do corpo afetadas presentes no dataset.
 
