@@ -20,19 +20,27 @@ logger = obter_logger_e_configuracao()
 app = FastAPI(
     title="Trabalho_API_ACD",
     description="""
-API para busca de informações sobre:
-- **Grau de Ferimento:** Recebe uma pergunta e retorna uma análise quanto ao grau do ferimento.
-- **Partes do Corpo Afetadas:** Recebe uma pergunta e utiliza dados do dataset do Kaggle (simulado) para identificar partes do corpo afetadas,
-  com processamento via API Groq.
+API dedicada à análise de dados de acidentes e lesões, fundamentada em estatísticas da Administração de Segurança e Saúde Ocupacional (OSHA)*, com integração ao modelo de linguagem via API Groq.  
+
+Oferece dois principais recursos:
+
+- **Grau de Ferimento:**  
+  Recebe uma pergunta e fornece uma análise baseada no grau de ferimento, utilizando o banco de dados de lesões da OSHA como referência (Kaggle).
+
+- **Partes do Corpo Afetadas:**  
+  Recebe uma pergunta e retorna uma análise sobre as partes do corpo mais suscetíveis a lesões, também alicerçada nos dados da OSHA (Kaggle).
+
+* A OSHA (Occupational Safety and Health Administration) é uma agência do Departamento do Trabalho dos Estados Unidos, responsável pela regulação e fiscalização das condições de saúde e segurança ocupacional.
 
 **Observações de segurança:**
 - Autenticação via token simples (API_TOKEN).
-- Validação dos dados com Pydantic.
+- Validação de dados com Pydantic.
 - Logs e tratamento de erros com códigos HTTP apropriados.
     """,
     version="1.0.0",
     dependencies=[Depends(verifica_token)],
 )
+
 
 # Permita apenas origens específicas (substitua "https://example.com" pelas origens autorizadas)
 app.add_middleware(
