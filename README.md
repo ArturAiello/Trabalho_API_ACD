@@ -1,6 +1,6 @@
 # Trabalho API
 
-Essa é uma API construída com FastAPI para busca e análise de informações relativas a acidentes, utilizando dados do dataset do Kaggle (simulado) e a API Groq para processamento de linguagem. A API conta com medidas de segurança aprimoradas, como autenticação (token simples e JWT), rate limiting, cabeçalhos de segurança e configuração de CORS.  
+construída com FastAPI para busca e análise de informações relativas a acidentes, utilizando dados do dataset do Kaggle (simulado) e a API Groq para processamento de linguagem. A API conta com medidas de segurança aprimoradas, como autenticação (token simples e JWT), rate limiting, cabeçalhos de segurança e configuração de CORS.  
 
 ---
 
@@ -100,7 +100,7 @@ Para iniciar o servidor de desenvolvimento, execute:
 
    ```bash
    uvicorn main:app --reload
-
+   
 - A API estará disponível em: http://127.0.0.1:8000
 
 ## Endpoints
