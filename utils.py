@@ -113,7 +113,7 @@ def dataset_return():
     # Defina as configurações do JWT
 SECRET_KEY = os.getenv("SECRET_KEY", "minha_chave_secreta")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 3
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
     to_encode = data.copy()
